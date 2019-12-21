@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .form import *
 import pickle
 import sklearn
@@ -6,6 +7,8 @@ import os
 import tweepy
 from .twitter_mining import get_tweets
 # Create your views here.
+def new_index():
+	return HttpResponse("<em>My second App</em>")
 def index(request):
 	return render(request,'index.html',{})
 def twitter_mining(request):
