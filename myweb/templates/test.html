@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <h1>We are in test.html file</h1>
+    <h1>{{text|cut:'hello'}}</h1>
+  </div>
+</div>
+{% endblock %}

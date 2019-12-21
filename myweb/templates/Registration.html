@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 text-center">
+    <strong>Sign Up Here </strong>
+    <form method="POST">
+      {{form.as_p}} {% csrf_token %}
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

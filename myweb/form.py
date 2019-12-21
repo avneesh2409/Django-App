@@ -1,5 +1,6 @@
 from django import forms
-
+from django.core import validators
+from .models import User
 class NameForm(forms.Form):
     ApplicantIncome = forms.CharField(max_length=100)
     CoapplicantIncome = forms.CharField(max_length=100)
@@ -17,3 +18,7 @@ class NameForm(forms.Form):
 class twitter_Mining(forms.Form):
 	Search_element = forms.CharField(max_length=500)
     
+class RegisterForm(forms.ModelForm) :
+    class Meta():
+        model = User
+        fields = '__all__'

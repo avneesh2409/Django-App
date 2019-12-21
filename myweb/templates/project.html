@@ -1,6 +1,7 @@
+{% extends 'index.html' %}
 {% load static %}
 
-<link rel='stylesheet' type='css/text' href='{% static 'bootstrap.min.css' %}'>
+{% block content %}
 {% if not form.is_bound %}
 <div style="text-align:center;"><h1>Enter the Details</h1></div>
 <form action='.' method='POST' >
@@ -26,3 +27,4 @@
 	{% endfor %}
 	<h1>Your Laon will be {{ y_pred }}</h1>
 {% endif %}
+{% endblock %}

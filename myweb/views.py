@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .form import *
 import pickle
 import sklearn
@@ -7,19 +6,38 @@ import os
 import tweepy
 from .twitter_mining import get_tweets
 # Create your views here.
-def new_index():
-	return HttpResponse("<em>My second App</em>")
+
+def new_index(request):
+	return render(request,'test.html',{'text':'hello World'})
+
+def register(request):
+	form = RegisterForm()
+
+	if request.method == 'POST':
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+			return new_index(request)
+		else:
+			print('Invalid form')			
+
+	return render(request,'Registration.html',{'form':form})
+
 def index(request):
 	return render(request,'index.html',{})
+
+def filters(request):
+	return render(request,'filters.html')
+
 def twitter_mining(request):
-	search=None
-	if request.method == 'POST':
-		form = twitter_Mining(request.POST)
-		if form.is_valid():
-			search = form.cleaned_data.get('Search_element')
-	else :
-		form = twitter_Mining()
-	return render(request,'twitter_mining.html',{'form':form,'tweets':get_tweets(search)})
+	# search=None
+	# if request.method == 'POST':
+	# 	form = twitter_Mining(request.POST)
+	# 	if form.is_valid():
+	# 		search = form.cleaned_data.get('Search_element')
+	# else :
+	# 	form = twitter_Mining()
+	return render(request,'twitter_mining.html')
 
 def project(request):
 	x=None

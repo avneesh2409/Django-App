@@ -1,7 +1,14 @@
+{% extends 'index.html' %}
 {% load static %}
 
-<link rel='stylesheet' type='css/text' href='{% static 'bootstrap.min.css' %}'>
-{% if not form.is_bound %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		<strong>We are in twitter Mining page</strong>
+	</div>
+</div>
+<!-- {% if not form.is_bound %}
 <div style="text-align:center;"><h1>Enter the Details</h1></div>
 <form action='.' method='POST' >
 {% csrf_token %}
@@ -29,4 +36,6 @@
 	<p title= {{i}} > {{i}}</p>
 	{% endfor %}
 	<a href="{% url 'twitter_mining' %}">Click here To Search Again</a>
-{% endif %}
+{% endif %} -->
+
+{% endblock %}

@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 
+
 urlpatterns = [
-    path('new_index/',new_index,name="new_index"),
+    path('filters/',filters,name='filters'),
+    path('register/',register,name="register"),
+    path('newindex/',new_index,name="new_index"),
 	path('',index,name='index'),
 	path('project/',project,name='project'),
 	path('twitter_mining/',twitter_mining,name='twitter_mining'),
