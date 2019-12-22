@@ -1,6 +1,7 @@
 from django import forms
 from django.core import validators
-from .models import User
+from .models import Register,UserProfile
+
 class NameForm(forms.Form):
     ApplicantIncome = forms.CharField(max_length=100)
     CoapplicantIncome = forms.CharField(max_length=100)
@@ -20,5 +21,14 @@ class TwitterMining(forms.Form):
     
 class RegisterForm(forms.ModelForm) :
     class Meta():
-        model = User
+        model = Register
         fields = '__all__'
+
+class ProfileForm(forms.ModelForm):
+    password = forms.CharField(widget = forms.PasswordInput())
+    # portfolio = forms.URLField(required = True)
+    # image = forms.ImageField(required = True)
+
+    class Meta():
+        models = UserProfile
+        fields = ['username','email','password']
