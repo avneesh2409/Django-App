@@ -15,7 +15,7 @@ class NameForm(forms.Form):
     Dependents1 = forms.CharField(max_length=100)
     
     
-class twitter_Mining(forms.Form):
+class TwitterMining(forms.Form):
 	Search_element = forms.CharField(max_length=500)
     
 class RegisterForm(forms.ModelForm) :

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import User
+from django.http import HttpResponse
 from .form import *
 import pickle
 import sklearn
@@ -9,6 +11,15 @@ from .twitter_mining import get_tweets
 
 def new_index(request):
 	return render(request,'test.html',{'text':'hello World'})
+
+
+def users(request):
+	users = User.objects.all()
+	if request.method == 'GET':
+		return render(request,'users.html',{'users':users})
+	else:
+		return HttpResponse("<h1>Post Request is not allowed to this page</h1>")
+
 
 def register(request):
 	form = RegisterForm()
@@ -30,14 +41,16 @@ def filters(request):
 	return render(request,'filters.html')
 
 def twitter_mining(request):
-	# search=None
-	# if request.method == 'POST':
-	# 	form = twitter_Mining(request.POST)
-	# 	if form.is_valid():
-	# 		search = form.cleaned_data.get('Search_element')
-	# else :
-	# 	form = twitter_Mining()
-	return render(request,'twitter_mining.html')
+	search=None
+	tweets = None
+	form = TwitterMining()
+	if request.method == 'POST':
+		form = TwitterMining(request.POST)
+		if form.is_valid():
+			search = form.cleaned_data['Search_element']
+			tweets = get_tweets(search)
+
+	return render(request,'twitter_mining.html',context={'form':form,'search':search,'tweets':tweets})
 
 def project(request):
 	x=None
