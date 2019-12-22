@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>we are in api handler.html file </h1>
+        {% for key,value in response %}
+            <strong>{{key}}</strong>:<p>{{value}}</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

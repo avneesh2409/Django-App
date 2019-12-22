@@ -16,9 +16,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPLATE_DIR = os.path.join(BASE_DIR,'myweb','template')
-print(TEMPLATE_DIR)
+
 STATIC_DIR = os.path.join(BASE_DIR,'myweb','static')
-print(STATIC_DIR)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 

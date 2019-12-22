@@ -19,6 +19,7 @@ from .views import *
 
 
 urlpatterns = [
+    path('apihandle/',apicall,name='apihandle'),
     path('users/',users,name='users'),
     path('filters/',filters,name='filters'),
     path('register/',register,name="register"),

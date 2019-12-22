@@ -3,6 +3,7 @@ from .models import User
 from django.http import HttpResponse
 from .form import *
 import pickle
+from . import apihandler
 import sklearn
 import os
 import tweepy
@@ -12,6 +13,9 @@ from .twitter_mining import get_tweets
 def new_index(request):
 	return render(request,'test.html',{'text':'hello World'})
 
+def apicall(request):
+	response = apihandler.apirequest()
+	return render(request,'apihandler.html',{'response':response})
 
 def users(request):
 	users = User.objects.all()
@@ -47,7 +51,7 @@ def twitter_mining(request):
 	if request.method == 'POST':
 		form = TwitterMining(request.POST)
 		if form.is_valid():
-			search = form.cleaned_data['Search_element']
+			search = form.cleaned_data.get('Search_element')
 			tweets = get_tweets(search)
 
 	return render(request,'twitter_mining.html',context={'form':form,'search':search,'tweets':tweets})

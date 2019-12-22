@@ -8,3 +8,9 @@ def cut(value,arg):
     '''
     return value.replace(arg,'')
 
+@register.filter(name='uppercase')
+def uppercase(value,arg):
+    '''
+    this function will convert a given string into its uppercase quivalent
+    '''
+    return value.uppercase()
