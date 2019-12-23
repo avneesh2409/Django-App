@@ -19,13 +19,11 @@ from .views import *
 
 
 urlpatterns = [
-    path('profile',profile,name='profile'),
+  
     path('apihandle/',apicall,name='apihandle'),
     path('users/',users,name='users'),
     path('filters/',filters,name='filters'),
     path('register/',register,name="register"),
     path('newindex/',new_index,name="new_index"),
 	path('',index,name='index'),
-	path('project/',project,name='project'),
-	path('twitter_mining/',twitter_mining,name='twitter_mining'),
 ]
