@@ -1,5 +1,5 @@
 .vscode
 .idea
 *.pyc
-mymodel/settings.py
-myweb/migrations/
+./mymodel/settings.py
+./myweb/migrations
