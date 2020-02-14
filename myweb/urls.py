@@ -15,15 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
 from .views import *
+from rest_framework import routers
+from .registerSerializer import RegisterViewSet
 
+router = routers.DefaultRouter()
+
+router.register(r'register', RegisterViewSet)
 
 urlpatterns = [
-  
     path('apihandle/',apicall,name='apihandle'),
     path('users/',users,name='users'),
     path('filters/',filters,name='filters'),
     path('register/',register,name="register"),
     path('newindex/',new_index,name="new_index"),
 	path('',index,name='index'),
+    url(r'api/', include(router.urls))
 ]
