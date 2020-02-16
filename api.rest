@@ -1,0 +1,12 @@
+# GET http://localhost:8000/myweb/api/register
+
+# POST http://localhost:8000/myweb/api/register/
+# Content-Type: application/json
+
+# {
+#     "username":"Sunil Sharma",
+#     "password":"123456789@",
+#     "email":"sunilsharma@gmail.com"
+# }
+
+GET http://localhost:8000/myweb/api/register/
