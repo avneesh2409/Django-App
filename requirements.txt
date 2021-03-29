@@ -53,7 +53,7 @@ pycodestyle==2.5.0
 pycrypto==2.6.1
 pycups==1.9.73
 pycurl==7.43.0.2
-Pygments==2.3.1
+Pygments==2.7.4
 PyGObject==3.34.0
 PyMySQL==0.9.3
 pyparsing==2.4.2
