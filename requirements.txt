@@ -42,7 +42,7 @@ mysql==0.0.2
 mysql-connector==2.2.9
 mysqlclient==1.4.2.post1
 nltk==3.4
-numpy==1.16.2
+numpy==1.22.0
 oauthlib==3.0.2
 onboard==1.4.1
 pandas==0.24.2
