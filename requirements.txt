@@ -36,7 +36,7 @@ keyring==18.0.1
 keyrings.alt==3.2.0
 kiwisolver==1.1.0
 louis==3.12.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.1.0
 mysql==0.0.2
 mysql-connector==2.2.9
